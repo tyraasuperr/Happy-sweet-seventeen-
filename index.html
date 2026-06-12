@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <style>
-        body { text-align: center; font-family: 'Arial', sans-serif; background: #fff0f5; padding-top: 50px; }
-        .cake { font-size: 100px; cursor: pointer; transition: transform 0.3s; }
-        .cake:hover { transform: scale(1.1); }
-        #message { display: none; margin-top: 20px; font-size: 24px; color: #d63384; font-weight: bold; }
-        .sparkle { animation: pop 0.5s ease-out; }
-        @keyframes pop { 0% { transform: scale(1); } 50% { transform: scale(1.5); } 100% { transform: scale(1); } }
+        body { text-align: center; font-family: 'Comic Sans MS', cursive; background: #fff0f5; padding-top: 50px; }
+        .halaman-awal { cursor: pointer; padding: 20px; border: 2px dashed #d63384; display: inline-block; border-radius: 20px; background: white; }
+        #konten-kejutan { display: none; }
+        .cake { font-size: 100px; margin-top: 20px; animation: bounce 2s infinite; }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        .pesan { font-size: 22px; color: #d63384; font-weight: bold; margin-top: 20px; padding: 20px; }
     </style>
 </head>
 <body>
 
-    <h1>Happy Sweet Seventeen, Ika Widyanurit! 🎂</h1>
-    <p>Klik kue di bawah ini untuk melihat harapanmu:</p>
-    
-    <div class="cake" id="cake" onclick="showMessage()">🎂</div>
-    
-    <div id="message">
-        <p>Di hari yang special ini, apapun yang menjadi harapan, doa dan wishlist kamu pasti akan tercapai! ✨</p>
+    <div id="halaman-awal" class="halaman-awal" onclick="bukaKejutan()">
+        <h1>Eh, ada sesuatu buat kamu nih! 👀</h1>
+        <p>Coba klik di sini dulu...</p>
+    </div>
+
+    <div id="konten-kejutan">
+        <h1>Happy Sweet Seventeen, Ika Widyanurit! 🎂</h1>
+        <div class="cake">🎂</div>
+        <div class="pesan">
+            <p>Di hari yang special ini, apapun yang menjadi harapan, doa dan wishlist kamu pasti akan tercapai! ✨</p>
+        </div>
     </div>
 
     <script>
-        function showMessage() {
-            const msg = document.getElementById('message');
-            const cake = document.getElementById('cake');
-            msg.style.display = 'block';
-            cake.classList.add('sparkle');
+        function bukaKejutan() {
+            document.getElementById('halaman-awal').style.display = 'none';
+            document.getElementById('konten-kejutan').style.display = 'block';
         }
     </script>
 </body>
