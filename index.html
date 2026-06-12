@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { text-align: center; font-family: 'Arial', sans-serif; background: #fff0f5; padding-top: 50px; }
+        .cake { font-size: 100px; cursor: pointer; transition: transform 0.3s; }
+        .cake:hover { transform: scale(1.1); }
+        #message { display: none; margin-top: 20px; font-size: 24px; color: #d63384; font-weight: bold; }
+        .sparkle { animation: pop 0.5s ease-out; }
+        @keyframes pop { 0% { transform: scale(1); } 50% { transform: scale(1.5); } 100% { transform: scale(1); } }
+    </style>
+</head>
+<body>
+
+    <h1>Happy Sweet Seventeen, Ika Widyanurit! 🎂</h1>
+    <p>Klik kue di bawah ini untuk melihat harapanmu:</p>
+    
+    <div class="cake" id="cake" onclick="showMessage()">🎂</div>
+    
+    <div id="message">
+        <p>Di hari yang special ini, apapun yang menjadi harapan, doa dan wishlist kamu pasti akan tercapai! ✨</p>
+    </div>
+
+    <script>
+        function showMessage() {
+            const msg = document.getElementById('message');
+            const cake = document.getElementById('cake');
+            msg.style.display = 'block';
+            cake.classList.add('sparkle');
+        }
+    </script>
+</body>
+</html>
